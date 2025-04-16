@@ -22,12 +22,11 @@ public:
      * Constructor de ArmaMagica.
      * @param poder Poder mágico del arma.
      * @param dur Durabilidad inicial del arma.
-     * @param mat Material del arma.
      * @param nom Nombre del arma.
      * @param niv Nivel del arma.
      * @param tipo Tipo del arma.
      */
-    ArmaMagica(int poder, int dur, string mat, string nom, int niv, string tipo);
+    ArmaMagica(int poder, int dur, string nom, int niv, string tipo);
 
     /**
      * Usa el arma para lanzar un hechizo mágico.
@@ -89,16 +88,13 @@ public:
      * Constructor de Baston.
      * @param poder Poder mágico del bastón.
      * @param dur Durabilidad inicial del bastón.
-     * @param mat Material del bastón.
      * @param nom Nombre del bastón.
-     * @param vid Vida inicial del bastón.
      * @param niv Nivel del bastón.
      * @param encantado Indica si el bastón está encantado.
      * @param energia Energía inicial del bastón.
      * @param tipoHechizo Tipo de hechizo que lanza el bastón.
-     * @param velocidad Velocidad de recarga de energía.
      */
-    Baston(int poder, int dur, string mat, string nom, int vid, int niv, bool encantado, int energia, string tipoHechizo, double velocidad);
+    Baston(int poder, int dur, string nom, int niv, bool encantado, int energia, string tipoHechizo);
 
     /**
      * Usa el bastón para lanzar un hechizo mágico.
@@ -176,14 +172,13 @@ public:
      * Constructor de Libro.
      * @param poder Poder mágico del libro.
      * @param dur Durabilidad inicial del libro.
-     * @param mat Material del libro.
      * @param nom Nombre del libro.
      * @param pag Número de páginas del libro.
      * @param sellado Indica si el libro está sellado.
      * @param conjuro Poder del conjuro del libro.
      * @param idi Idioma del libro.
      */
-    Libro(int poder, int dur, string mat, string nom, int pag, bool sellado, int conjuro, string idi);
+    Libro(int poder, int dur, string nom, int pag, bool sellado, int conjuro, string idi);
 
     /**
      * Usa el libro para invocar un conjuro.
@@ -267,16 +262,14 @@ public:
      * Constructor de Pocion.
      * @param poder Poder mágico de la poción.
      * @param dur Durabilidad inicial de la poción.
-     * @param mat Material del recipiente de la poción.
      * @param nom Nombre de la poción.
-     * @param vid Vida inicial de la poción.
      * @param niv Nivel de la poción.
      * @param tipo Tipo de poción (ej. curativa, de energía, de fuerza).
      * @param cantidad Cantidad de usos que tiene la poción.
      * @param efecto Cantidad de vida o energía que restaura.
      * @param esAguaBendita Indica si la poción es agua bendita (opcional, por defecto `false`).
      */
-    Pocion(int poder, int dur, string mat, string nom, int vid, int niv, string tipo, int cantidad, int efecto, bool esAguaBendita = false);
+    Pocion(int poder, int dur, string nom, int niv, string tipo, int cantidad, int efecto, bool esAguaBendita = false);
 
     /**
      * Usa la poción para aplicar su efecto.
@@ -319,14 +312,12 @@ public:
      * Constructor de Amuleto.
      * @param poder Poder mágico del amuleto.
      * @param dur Durabilidad inicial del amuleto.
-     * @param mat Material del amuleto.
      * @param nom Nombre del amuleto.
-     * @param vid Vida inicial del amuleto.
      * @param niv Nivel del amuleto.
      * @param efecto Efecto especial del amuleto (ej. "Aumenta la defensa").
      * @param duracion Duración del efecto especial en turnos.
      */
-    Amuleto(int poder, int dur, string mat, string nom, int vid, int niv, string efecto, int duracion);
+    Amuleto(int poder, int dur, string nom, int niv, string efecto);
 
     /**
      * Activa el efecto especial del amuleto.

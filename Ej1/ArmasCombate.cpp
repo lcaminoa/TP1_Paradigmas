@@ -6,7 +6,7 @@
 using namespace std;
 
 // Constructor de ArmaDeCombate
-ArmaDeCombate::ArmaDeCombate(int dano, int dur, int niv, string mat, string nom, string tipo)
+ArmaDeCombate::ArmaDeCombate(int dano, int dur, int niv, string nom, string tipo)
     : danoFisico(dano), durabilidad(dur), nivel(niv), nombre(nom), tipo(tipo) {}
 
 int ArmaDeCombate::getPoder() const {
@@ -35,8 +35,8 @@ string ArmaDeCombate::getInfo() const {
 
 // HachaSimple
 
-HachaSimple::HachaSimple(int dano, int dur, int niv, string mat, string nom, double filoInicial)
-    : ArmaDeCombate(dano, dur, niv, mat, nom, "HachaSimple"), filo(filoInicial) {}
+HachaSimple::HachaSimple(int dano, int dur, int niv, string nom, double filoInicial)
+    : ArmaDeCombate(dano, dur, niv, nom, "HachaSimple"), filo(filoInicial) {}
 
 bool HachaSimple::estaAfilado() const {
     return filo > 10; // Considera afilado si el filo es mayor a 10
@@ -87,8 +87,8 @@ string HachaSimple::getInfo() const {
 
 // Hacha doble
 
-HachaDoble::HachaDoble(int dano, int dur, int niv, string mat, string nom, double filo1, double filo2)
-    : ArmaDeCombate(dano, dur, niv, mat, nom, "HachaDoble"), filoPrincipal(filo1), filoSecundario(filo2) {}
+HachaDoble::HachaDoble(int dano, int dur, int niv, string nom, double filo1, double filo2)
+    : ArmaDeCombate(dano, dur, niv, nom, "HachaDoble"), filoPrincipal(filo1), filoSecundario(filo2) {}
 
 // Nuevo método para verificar si ambos filos están afilados
 bool HachaDoble::estaAfilado() const {
@@ -149,8 +149,8 @@ string HachaDoble::getInfo() const {
 
 // Espada
 
-Espada::Espada(int dano, int dur, int niv, string mat, string nom, double filoInicial, double probCritico)
-    : ArmaDeCombate(dano, dur, niv, mat, nom, "Espada"), filo(filoInicial), probabilidadCritico(probCritico) {
+Espada::Espada(int dano, int dur, int niv, string nom, double filoInicial, double probCritico)
+    : ArmaDeCombate(dano, dur, niv, nom, "Espada"), filo(filoInicial), probabilidadCritico(probCritico) {
     srand(time(0)); // Inicializar la semilla para números aleatorios
 }
 
@@ -211,8 +211,8 @@ string Espada::getInfo() const {
 
 // Lanza
 
-Lanza::Lanza(int dano, int dur, int niv, string mat, string nom, double alcanceInicial, double perforacionInicial)
-    : ArmaDeCombate(dano, dur, niv, mat, nom, "Lanza"), alcance(alcanceInicial), perforacion(perforacionInicial) {}
+Lanza::Lanza(int dano, int dur, int niv, string nom, double alcanceInicial, double perforacionInicial)
+    : ArmaDeCombate(dano, dur, niv, nom, "Lanza"), alcance(alcanceInicial), perforacion(perforacionInicial) {}
 
 bool Lanza::estaAfilado() const {
     return perforacion > 10; // Está afilada si la perforación es mayor a 10
@@ -266,8 +266,8 @@ string Lanza::getInfo() const {
 
 // Garrote
 
-Garrote::Garrote(int dano, int dur, int niv, string mat, double p, string nom, double pesoCabezaInicial, double probAturdir)
-    : ArmaDeCombate(dano, dur, niv, mat, nom, "Garrote"), pesoCabeza(pesoCabezaInicial), probabilidadAturdir(probAturdir), estaEnBuenEstado(true) {
+Garrote::Garrote(int dano, int dur, int niv, string nom, double pesoCabezaInicial, double probAturdir)
+    : ArmaDeCombate(dano, dur, niv, nom, "Garrote"), pesoCabeza(pesoCabezaInicial), probabilidadAturdir(probAturdir), estaEnBuenEstado(true) {
     srand(time(0)); // Inicializar la semilla para números aleatorios
 }
 

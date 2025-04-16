@@ -22,11 +22,10 @@ public:
      * @param dano Daño físico del arma.
      * @param dur Durabilidad inicial del arma.
      * @param niv Nivel del arma.
-     * @param mat Material del arma.
      * @param nom Nombre del arma.
      * @param tipo Tipo del arma (ej. "Espada", "Hacha", etc.).
      */
-    ArmaDeCombate(int dano, int dur, int niv, string mat, string nom, string tipo);
+    ArmaDeCombate(int dano, int dur, int niv, string nom, string tipo);
 
     /**
      * Método abstracto para usar el arma.
@@ -82,11 +81,10 @@ public:
      * @param dano Daño físico del hacha.
      * @param dur Durabilidad inicial del hacha.
      * @param niv Nivel del hacha.
-     * @param mat Material del hacha.
      * @param nom Nombre del hacha.
      * @param filoInicial Filo inicial del hacha.
      */
-    HachaSimple(int dano, int dur, int niv, string mat, string nom, double filoInicial);
+    HachaSimple(int dano, int dur, int niv, string nom, double filoInicial);
 
     /**
      * Verifica si el hacha está afilada (filo > 10).
@@ -135,12 +133,11 @@ public:
      * @param dano Daño físico del hacha.
      * @param dur Durabilidad inicial del hacha.
      * @param niv Nivel del hacha.
-     * @param mat Material del hacha.
      * @param nom Nombre del hacha.
      * @param filo1 Filo principal del hacha.
      * @param filo2 Filo secundario del hacha.
      */
-    HachaDoble(int dano, int dur, int niv, string mat, string nom, double filo1, double filo2);
+    HachaDoble(int dano, int dur, int niv, string nom, double filo1, double filo2);
 
     /**
      * Verifica si ambos filos están afilados.
@@ -189,12 +186,11 @@ public:
      * @param dano Daño físico de la espada.
      * @param dur Durabilidad inicial de la espada.
      * @param niv Nivel de la espada.
-     * @param mat Material de la espada.
      * @param nom Nombre de la espada.
      * @param filoInicial Filo inicial de la espada.
      * @param probCritico Probabilidad de realizar un ataque crítico.
      */
-    Espada(int dano, int dur, int niv, string mat, string nom, double filoInicial, double probCritico);
+    Espada(int dano, int dur, int niv, string nom, double filoInicial, double probCritico);
 
     /**
      * Verifica si el filo está afilado.
@@ -243,12 +239,11 @@ public:
      * @param dano Daño físico de la lanza.
      * @param dur Durabilidad inicial de la lanza.
      * @param niv Nivel de la lanza.
-     * @param mat Material de la lanza.
      * @param nom Nombre de la lanza.
      * @param alcanceInicial Alcance inicial de la lanza.
      * @param perforacionInicial Capacidad inicial de perforación de la lanza.
      */
-    Lanza(int dano, int dur, int niv, string mat, string nom, double alcanceInicial, double perforacionInicial);
+    Lanza(int dano, int dur, int niv, string nom, double alcanceInicial, double perforacionInicial);
 
     /**
      * Verifica si la lanza está afilada (perforación > 10).
@@ -298,13 +293,11 @@ public:
      * @param dano Daño físico del garrote.
      * @param dur Durabilidad inicial del garrote.
      * @param niv Nivel del garrote.
-     * @param mat Material del garrote.
-     * @param p Peso del garrote.
      * @param nom Nombre del garrote.
      * @param pesoCabezaInicial Peso inicial de la cabeza del garrote.
      * @param probAturdir Probabilidad inicial de aturdir al enemigo.
      */
-    Garrote(int dano, int dur, int niv, string mat, double p, string nom, double pesoCabezaInicial, double probAturdir);
+    Garrote(int dano, int dur, int niv, string nom, double pesoCabezaInicial, double probAturdir);
 
     /**
      * Usa el garrote para atacar.

@@ -6,7 +6,7 @@
 using namespace std;
 
 // ArmaMagica
-ArmaMagica::ArmaMagica(int poder, int dur, string mat, string nom, int niv, string tipoArma)
+ArmaMagica::ArmaMagica(int poder, int dur, string nom, int niv, string tipoArma)
     : poderMagico(poder), durabilidad(dur), nombre(nom), nivel(niv), tipo(tipoArma) {}
 
 int ArmaMagica::getPoder() const {
@@ -33,8 +33,8 @@ string ArmaMagica::getInfo() const {
 }
 
 // Baston
-Baston::Baston(int poder, int dur, string mat, string nom, int vid, int niv, bool encantado, int energia, string tipoHechizo, double velocidad)
-    : ArmaMagica(poder, dur, mat, nom, niv, "Baston"), estaEncantado(encantado),
+Baston::Baston(int poder, int dur, string nom, int niv, bool encantado, int energia, string tipoHechizo)
+    : ArmaMagica(poder, dur, nom, niv, "Baston"), estaEncantado(encantado),
       energiaRestante(energia), tipoHechizo(tipoHechizo), esFerulaPapal(false), esBastonSatanas(false) {}
 
 void Baston::usar() {
@@ -170,8 +170,8 @@ string Baston::getInfo() const {
 }
 
 // Libro
-Libro::Libro(int poder, int dur, string mat, string nom, int pag, bool sellado, int conjuro, string idi)
-    : ArmaMagica(poder, dur, mat, nom, 1, "Libro"), paginas(pag), estaSellado(sellado),
+Libro::Libro(int poder, int dur, string nom, int pag, bool sellado, int conjuro, string idi)
+    : ArmaMagica(poder, dur, nom, 1, "Libro"), paginas(pag), estaSellado(sellado),
       poderConjuro(conjuro), idioma(idi), esBiblia(false), esNecronomicon(false) {
     listaVersiculos();
     listaFrasesOscuras();
@@ -362,8 +362,8 @@ string Libro::getInfo() const {
 
 // Pocion
 
-Pocion::Pocion(int poder, int dur, string mat, string nom, int vid, int niv, string tipoPocion, int cant, int efectoPocion, bool aguaBendita)
-    : ArmaMagica(poder, dur, mat, nom, niv, "Pocion"), tipo(tipoPocion), cantidad(cant), efecto(efectoPocion), esAguaBendita(aguaBendita) {}
+Pocion::Pocion(int poder, int dur, string nom, int niv, string tipo, int cantidad, int efecto, bool esAguaBendita)
+    : ArmaMagica(poder, dur, nom, niv, "Pocion"), tipo(tipo), cantidad(cantidad), efecto(efecto), esAguaBendita(esAguaBendita) {}
 
 void Pocion::usar() {
     if (cantidad > 0 && durabilidad > 0) {
@@ -426,8 +426,8 @@ string Pocion::getInfo() const {
 
 // Amuleto
 
-Amuleto::Amuleto(int poder, int dur, string mat, string nom, int vid, int niv, string efectoEsp, int duracion)
-    : ArmaMagica(poder, dur, mat, nom, niv, "Amuleto"), efectoEspecial(efectoEsp), estaActivado(false), esCrucifijo(false) {}
+Amuleto::Amuleto(int poder, int dur, string nom, int niv, string efectoEsp)
+    : ArmaMagica(poder, dur, nom, niv, "Amuleto"), efectoEspecial(efectoEsp), estaActivado(false), esCrucifijo(false) {}
 
 void Amuleto::usar() {
     if (estaActivado && durabilidad > 0) {

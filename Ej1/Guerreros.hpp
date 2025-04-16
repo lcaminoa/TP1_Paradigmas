@@ -142,13 +142,12 @@ public:
      * Constructor de Paladin.
      * @param s Salud inicial del paladín.
      * @param f Fuerza inicial del paladín.
-     * @param i Inteligencia inicial del paladín.
      * @param e Experiencia inicial del paladín.
      * @param nom Nombre del paladín.
      * @param feInicial Fe inicial del paladín.
      * @param poderInicial Poder sagrado inicial del paladín.
      */
-    Paladin(int s, int f, int i, int e, string nom, int feInicial, int poderInicial);
+    Paladin(int s, int f, int e, string nom, int feInicial, int poderInicial);
 
     /**
      * Realiza un ataque con el paladín.
@@ -195,13 +194,12 @@ public:
      * Constructor de Caballero.
      * @param s Salud inicial del caballero.
      * @param f Fuerza inicial del caballero.
-     * @param i Inteligencia inicial del caballero.
      * @param e Experiencia inicial del caballero.
      * @param nom Nombre del caballero.
      * @param honorInicial Honor inicial del caballero.
      * @param devocionInicial Devoción inicial del caballero.
      */
-    Caballero(int s, int f, int i, int e, string nom, int honorInicial, int devocionInicial);
+    Caballero(int s, int f, int e, string nom, int honorInicial, int devocionInicial);
 
     /**
      * Realiza un ataque con el caballero.
@@ -249,13 +247,12 @@ public:
      * Constructor de Mercenario.
      * @param s Salud inicial del mercenario.
      * @param f Fuerza inicial del mercenario.
-     * @param i Inteligencia inicial del mercenario.
      * @param e Experiencia inicial del mercenario.
      * @param nom Nombre del mercenario.
      * @param oroInicial Oro inicial del mercenario.
      * @param lealtadInicial Lealtad inicial del mercenario.
      */
-    Mercenario(int s, int f, int i, int e, string nom, int oroInicial, int lealtadInicial);
+    Mercenario(int s, int f, int e, string nom, int oroInicial, int lealtadInicial);
 
     /**
      * Compra una poción para restaurar salud.
@@ -308,13 +305,12 @@ public:
      * Constructor de Gladiador.
      * @param s Salud inicial del gladiador.
      * @param f Fuerza inicial del gladiador.
-     * @param i Inteligencia inicial del gladiador.
      * @param e Experiencia inicial del gladiador.
      * @param nom Nombre del gladiador.
      * @param gloriaInicial Gloria inicial del gladiador.
      * @param resistenciaInicial Resistencia inicial del gladiador.
      */
-    Gladiador(int s, int f, int i, int e, string nom, int gloriaInicial, int resistenciaInicial);
+    Gladiador(int s, int f, int e, string nom, int gloriaInicial, int resistenciaInicial);
 
     /**
      * Realiza un ataque con el gladiador.

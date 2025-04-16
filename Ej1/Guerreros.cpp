@@ -158,7 +158,7 @@ string Barbaro::obtenerEstadisticas() const {
 
 // Paladin
 
-Paladin::Paladin(int s, int f, int i, int e, string nom, int feInicial, int poderInicial)
+Paladin::Paladin(int s, int f, int e, string nom, int feInicial, int poderInicial)
     : Guerrero(s, f, e, nom, "Paladin"), fe(feInicial), poderSagrado(poderInicial) {}
 
 void Paladin::atacar() {
@@ -228,7 +228,7 @@ string Paladin::obtenerEstadisticas() const {
 
 // Caballero
 
-Caballero::Caballero(int s, int f, int i, int e, string nom, int honorInicial, int devocionInicial)
+Caballero::Caballero(int s, int f, int e, string nom, int honorInicial, int devocionInicial)
     : Guerrero(s, f, e, nom, "Caballero"), honor(honorInicial), devocion(devocionInicial) {}
 
 void Caballero::atacar() {
@@ -292,7 +292,7 @@ string Caballero::obtenerEstadisticas() const {
 
 // Mercenario
 
-Mercenario::Mercenario(int s, int f, int i, int e, string nom, int oroInicial, int lealtadInicial)
+Mercenario::Mercenario(int s, int f, int e, string nom, int oroInicial, int lealtadInicial)
     : Guerrero(s, f, e, nom, "Mercenario"), oro(oroInicial), lealtad(lealtadInicial) {}
 
 void Mercenario::comprarPocion(int costo, int saludRestaurada) {
@@ -367,7 +367,7 @@ string Mercenario::obtenerEstadisticas() const {
 
 // Gladiador
 
-Gladiador::Gladiador(int s, int f, int i, int e, string nom, int gloriaInicial, int resistenciaInicial)
+Gladiador::Gladiador(int s, int f, int e, string nom, int gloriaInicial, int resistenciaInicial)
     : Guerrero(s, f, e, nom, "Gladiador"), gloria(gloriaInicial), resistencia(resistenciaInicial) {}
 
 void Gladiador::entrenar() {

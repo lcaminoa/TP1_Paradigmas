@@ -68,10 +68,10 @@ unique_ptr<InterfazPersonaje> Factory::crearPersonaje(int personaje, vector<uniq
         }
 
         // Asignar las armas al personaje
-        bool esPrimaria = true; // La primera arma será primaria
+        bool esPrimaria = true; // La primer arma es la primaria
         for (auto& arma : Armas) {
             nuevoPersonaje->equiparArma(std::move(arma), esPrimaria);
-            esPrimaria = false; // Las siguientes armas serán secundarias
+            esPrimaria = false; // La siguiente armas será la secundaria
         }
 
         return nuevoPersonaje;

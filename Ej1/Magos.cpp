@@ -82,14 +82,14 @@ void Mago::recibirDanio(int danio) {
 }
 
 string Mago::getNombre() const {
-    return nombre;
+    return nombre; // Devolver el nombre del mago
 }
 
 string Mago::getTipo() const {
-    return tipo;
+    return tipo; // Devolver el tipo del mago
 }
 
-Mago::~Mago() = default; // unique_ptr se encarga de liberar las armas automáticamente
+Mago::~Mago() = default; // unique_ptr libera las armas automáticamente
 
 
 // Hechicero
@@ -242,6 +242,7 @@ string Conjurador::obtenerEstadisticas() const {
 
 
 // Brujo
+
 Brujo::Brujo(int m, int s, int f, int i, int e, string nom, int poder, int nivel)
     : Mago(m, s, f, i, e, nom, "Brujo"), poderOscuro(poder), nivelMaldicion(nivel) {}
 
@@ -324,6 +325,7 @@ string Brujo::obtenerEstadisticas() const {
 
 
 // Nigromante
+
 Nigromante::Nigromante(int m, int s, int f, int i, int e, string nom, int poder, int muertos)
     : Mago(m, s, f, i, e, nom, "Nigromante"), poderNecromancia(poder), cantidadMuertosInvocados(muertos) {}
 

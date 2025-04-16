@@ -5,25 +5,25 @@
 
 using namespace std;
 
-// Constructor de ArmaDeCombate
+// ArmaDeCombate
+
 ArmaDeCombate::ArmaDeCombate(int dano, int dur, int niv, string nom, string tipo)
     : danoFisico(dano), durabilidad(dur), nivel(niv), nombre(nom), tipo(tipo) {}
 
 int ArmaDeCombate::getPoder() const {
-    return danoFisico;
+    return danoFisico; // Devuelve el daño físico del arma
 }
 
 string ArmaDeCombate::getNombre() const {
-    return nombre;
+    return nombre; // Devuelve el nombre del arma
 }
 
-// Método para obtener el tipo del arma de combate
 string ArmaDeCombate::getTipo() const {
-    return tipo;
+    return tipo; // Devuelve el tipo de arma
 }
 
 bool ArmaDeCombate::puedeUsarse() const {
-    return durabilidad > 0;
+    return durabilidad > 0; // El arma puede usarse si tiene durabilidad
 }
 
 string ArmaDeCombate::getInfo() const {
@@ -33,13 +33,14 @@ string ArmaDeCombate::getInfo() const {
            "\nNivel: " + to_string(nivel);
 }
 
+
 // HachaSimple
 
 HachaSimple::HachaSimple(int dano, int dur, int niv, string nom, double filoInicial)
     : ArmaDeCombate(dano, dur, niv, nom, "HachaSimple"), filo(filoInicial) {}
 
 bool HachaSimple::estaAfilado() const {
-    return filo > 10; // Considera afilado si el filo es mayor a 10
+    return filo > 10; // Está afilado si el filo es mayor a 10
 }
 
 void HachaSimple::usar() {
@@ -56,7 +57,7 @@ void HachaSimple::usar() {
 }
 
 void HachaSimple::afilar() {
-    filo += 5; // Incrementar el filo al afilar
+    filo += 5; // Aumentar el filo al afilar
     cout << "El hacha " << nombre << " ha sido afilada. Nuevo filo: " << filo << ".\n";
 }
 
@@ -72,8 +73,8 @@ void HachaSimple::reducirDurabilidad() {
 
 void HachaSimple::mejorar() {
     nivel++;
-    danoFisico += 5; // Incrementar el daño físico
-    filo += 2; // Incrementar el filo
+    danoFisico += 5; // Aumentar el daño físico
+    filo += 2; // Aumentar el filo
     cout << "El hacha " << nombre << " ha sido mejorada al nivel " << nivel << ".\n";
 }
 
@@ -85,14 +86,14 @@ string HachaSimple::getInfo() const {
            "\nNivel: " + to_string(nivel);
 }
 
+
 // Hacha doble
 
 HachaDoble::HachaDoble(int dano, int dur, int niv, string nom, double filo1, double filo2)
     : ArmaDeCombate(dano, dur, niv, nom, "HachaDoble"), filoPrincipal(filo1), filoSecundario(filo2) {}
 
-// Nuevo método para verificar si ambos filos están afilados
 bool HachaDoble::estaAfilado() const {
-    return filoPrincipal > 10 && filoSecundario > 10; // Ambos filos deben estar por encima de 10
+    return filoPrincipal > 10 && filoSecundario > 10; // Ambos filos tienen que estar por encima de 10
 }
 
 void HachaDoble::usar() {
@@ -105,7 +106,7 @@ void HachaDoble::usar() {
         reducirDurabilidad();
         filoPrincipal -= 1; // Reducir el filo principal
         filoSecundario -= 1; // Reducir el filo secundario
-        if (filoPrincipal < 0) filoPrincipal = 0; // Asegurarse de que no sea negativo
+        if (filoPrincipal < 0) filoPrincipal = 0; // Ver que no sea negativo
         if (filoSecundario < 0) filoSecundario = 0;
         cout << "El filo principal del hacha doble " << nombre << " se ha reducido a " << filoPrincipal << ".\n";
         cout << "El filo secundario del hacha doble " << nombre << " se ha reducido a " << filoSecundario << ".\n";
@@ -115,8 +116,8 @@ void HachaDoble::usar() {
 }
 
 void HachaDoble::afilar() {
-    filoPrincipal += 5; // Incrementar el filo principal
-    filoSecundario += 5; // Incrementar el filo secundario
+    filoPrincipal += 5; // Aumentar el filo principal
+    filoSecundario += 5; // Aumentar el filo secundario
     cout << "El hacha doble " << nombre << " ha sido afilada. Nuevos filos: " << filoPrincipal << " y " << filoSecundario << ".\n";
 }
 
@@ -132,9 +133,9 @@ void HachaDoble::reducirDurabilidad() {
 
 void HachaDoble::mejorar() {
     nivel++;
-    danoFisico += 10; // Incrementar el daño físico
-    filoPrincipal += 3; // Incrementar el filo principal
-    filoSecundario += 3; // Incrementar el filo secundario
+    danoFisico += 10; // Aumentar el daño físico
+    filoPrincipal += 3; // Aumentar el filo principal
+    filoSecundario += 3; // Aumentar el filo secundario
     cout << "El hacha doble " << nombre << " ha sido mejorada al nivel " << nivel << ".\n";
 }
 
@@ -146,6 +147,7 @@ string HachaDoble::getInfo() const {
            "\nDurabilidad: " + to_string(durabilidad) +
            "\nNivel: " + to_string(nivel);
 }
+
 
 // Espada
 
@@ -171,7 +173,7 @@ void Espada::usar() {
         cout << "Usando la espada " << nombre << ". Daño causado: " << danoTotal << ".\n";
         reducirDurabilidad();
         filo -= 1; // Reducir el filo al usar la espada
-        if (filo < 0) filo = 0; // Asegurarse de que el filo no sea negativo
+        if (filo < 0) filo = 0; // Ver que el filo no sea negativo
         cout << "El filo de la espada " << nombre << " se ha reducido a " << filo << ".\n";
     } else {
         cout << "La espada " << nombre << " está rota y no puede ser usada.\n";
@@ -179,7 +181,7 @@ void Espada::usar() {
 }
 
 void Espada::afilar() {
-    filo += 5; // Incrementar el filo al afilar
+    filo += 5; // Aumentar el filo al afilar
     cout << "La espada " << nombre << " ha sido afilada. Nuevo filo: " << filo << ".\n";
 }
 
@@ -195,8 +197,8 @@ void Espada::reducirDurabilidad() {
 
 void Espada::mejorar() {
     nivel++;
-    danoFisico += 5; // Incrementar el daño físico
-    filo += 2; // Incrementar el filo
+    danoFisico += 5; // Aumentar el daño físico
+    filo += 2; // Aumentar el filo
     cout << "La espada " << nombre << " ha sido mejorada al nivel " << nivel << ".\n";
 }
 
@@ -208,6 +210,7 @@ string Espada::getInfo() const {
            "\nDurabilidad: " + to_string(durabilidad) +
            "\nNivel: " + to_string(nivel);
 }
+
 
 // Lanza
 
@@ -225,7 +228,7 @@ void Lanza::usar() {
         cout << "Daño causado: " << danoTotal << ".\n";
         reducirDurabilidad();
         perforacion -= 1; // Reducir la perforación al usar la lanza
-        if (perforacion < 0) perforacion = 0; // Asegurarse de que la perforación no sea negativa
+        if (perforacion < 0) perforacion = 0; // Ver que la perforación no sea negativa
         cout << "La perforación de la lanza " << nombre << " se ha reducido a " << perforacion << ".\n";
     } else {
         cout << "La lanza " << nombre << " está rota y no puede ser usada.\n";
@@ -233,7 +236,7 @@ void Lanza::usar() {
 }
 
 void Lanza::afilar() {
-    perforacion += 5; // Incrementar la perforación al afilar
+    perforacion += 5; // Aumentar la perforación al afilar
     cout << "La lanza " << nombre << " ha sido afilada. Nueva perforación: " << perforacion << ".\n";
 }
 
@@ -249,9 +252,9 @@ void Lanza::reducirDurabilidad() {
 
 void Lanza::mejorar() {
     nivel++;
-    danoFisico += 5; // Incrementar el daño físico
-    perforacion += 3; // Incrementar la perforación
-    alcance += 1; // Incrementar el alcance
+    danoFisico += 5; // Aumentar el daño físico
+    perforacion += 3; // Aumentar la perforación
+    alcance += 1; // Aumentar el alcance
     cout << "La lanza " << nombre << " ha sido mejorada al nivel " << nivel << ".\n";
 }
 
@@ -263,6 +266,7 @@ string Lanza::getInfo() const {
            "\nDurabilidad: " + to_string(durabilidad) +
            "\nNivel: " + to_string(nivel);
 }
+
 
 // Garrote
 
@@ -317,8 +321,8 @@ void Garrote::reducirDurabilidad() {
 
 void Garrote::mejorar() {
     nivel++;
-    danoFisico += 5; // Incrementar el daño físico
-    pesoCabeza += 2; // Incrementar el peso de la cabeza
+    danoFisico += 5; // Aumentar el daño físico
+    pesoCabeza += 2; // Aumentar el peso de la cabeza
     cout << "El garrote " << nombre << " ha sido mejorado al nivel " << nivel << ".\n";
 }
 

@@ -6,23 +6,24 @@
 using namespace std;
 
 // ArmaMagica
+
 ArmaMagica::ArmaMagica(int poder, int dur, string nom, int niv, string tipoArma)
     : poderMagico(poder), durabilidad(dur), nombre(nom), nivel(niv), tipo(tipoArma) {}
 
 int ArmaMagica::getPoder() const {
-    return poderMagico;
+    return poderMagico; // Devuelve el poder mágico del arma
 }
 
 string ArmaMagica::getNombre() const {
-    return nombre;
+    return nombre; // Devuelve el nombre del arma
 }
 
 string ArmaMagica::getTipo() const {
-    return tipo;
+    return tipo; // Devuelve el tipo de arma
 }
 
 bool ArmaMagica::puedeUsarse() const {
-    return durabilidad > 0;
+    return durabilidad > 0; // El arma puede usarse si tiene durabilidad
 }
 
 string ArmaMagica::getInfo() const {
@@ -32,7 +33,9 @@ string ArmaMagica::getInfo() const {
            "\nNivel: " + to_string(nivel);
 }
 
+
 // Baston
+
 Baston::Baston(int poder, int dur, string nom, int niv, bool encantado, int energia, string tipoHechizo)
     : ArmaMagica(poder, dur, nom, niv, "Baston"), estaEncantado(encantado),
       energiaRestante(energia), tipoHechizo(tipoHechizo), esFerulaPapal(false), esBastonSatanas(false) {}
@@ -45,7 +48,7 @@ void Baston::usar() {
         energiaRestante -= costoEnergia;
         cout << "Energía restante: " << energiaRestante << ".\n";
 
-        // Efecto especial del bastón : regenera mana al usarlo
+        // Efecto especial del bastón: regenera mana al usarlo
         cout << "El bastón regenera 5 puntos de mana al jugador.\n";
     } else if (energiaRestante <= 0) {
         cout << "No hay suficiente energía para usar el bastón.\n";
@@ -106,7 +109,7 @@ void Baston::encantar() {
         cout << nombre << " no puede ser encantado, pues ya cuenta con el poder del infierno.\n";
     } else if (!estaEncantado) {
         estaEncantado = true;
-        poderMagico += 20; // Aumentar significativamente el poder mágico
+        poderMagico += 20; // Aumentar el poder mágico
         cout << nombre << " ha sido encantado! Poder aumentado a " << poderMagico << ".\n";
     } else {
         cout << nombre << " ya está encantado.\n";
@@ -124,7 +127,7 @@ void Baston::convertirEnFerulaPapal() {
         tipoHechizo = "Luz Divina"; // Cambiar el tipo de hechizo
         poderMagico += 30; // Aumentar el poder mágico
         energiaRestante += 20; // Restaurar algo de energía
-        estaEncantado = false; // El modo Férula Papal no puede encantarse
+        estaEncantado = false; // El modo Férula Papal no se puede encantar
 
         cout << nombre << " ha sido convertido en la Férula Papal. Que la luz divina te guíe.\n";
     } else {
@@ -273,9 +276,9 @@ void Libro::convertirEnNecronomicon() {
 
     esNecronomicon = true;
     idioma = "Lengua Oscura"; // Cambiar el idioma
-    poderConjuro += 50; // Aumentar significativamente el poder del conjuro
+    poderConjuro += 50; // Aumentar el poder del conjuro
     paginas += 100; // Agregar más páginas oscuras
-    estaSellado = true; // El Necronomicón comienza sellado
+    estaSellado = true; // El Necronomicón empieza sellado
 
     cout << "El libro " << nombre << " se ha convertido en el Necronomicón, un tomo oscuro de gran poder.\n";
 }
@@ -301,7 +304,7 @@ void Libro::agregarPaginas(int cantidad) {
         int costoPoder = cantidad * 5; // Costo de poder por página agregada
         int desgasteDurabilidad = cantidad / 10; // Desgaste de durabilidad por cada 10 páginas
 
-        // Verificar si hay suficiente energía mágica y durabilidad
+        // Ver si hay suficiente energía mágica y durabilidad
         if (poderMagico >= costoPoder && durabilidad > desgasteDurabilidad) {
             paginas += cantidad;
             poderMagico -= costoPoder; // Reducir poder mágico
@@ -359,6 +362,7 @@ string Libro::getInfo() const {
     }
     return info;
 }
+
 
 // Pocion
 
@@ -492,7 +496,7 @@ void Amuleto::usarCrucifijo() {
         cout << "Efecto: Aumenta la defensa y regenera energía.\n";
         cout << "El amuleto vuelve a su estado normal.\n";
         reducirDurabilidad();
-        esCrucifijo = false; // Dejar de ser un crucifijo después de usarlo
+        esCrucifijo = false; // Deja de ser un crucifijo después de usarlo
     } else {
         cout << "El amuleto " << nombre << " no es un crucifijo.\n";
     }

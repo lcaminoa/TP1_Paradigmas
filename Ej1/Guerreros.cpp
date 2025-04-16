@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// Guerrero
+
 Guerrero::Guerrero(int s, int f, int e, string nom, string tipo)
     : salud(s), fuerza(f), experiencia(e), nombre(nom), tipo(tipo), armas(2) {}
 
@@ -57,15 +59,15 @@ void Guerrero::desequiparArma(bool esPrimaria) {
 }
 
 string Guerrero::getNombre() const {
-    return nombre;
+    return nombre; // Devolver el nombre del guerrero
 }
 
 string Guerrero::getTipo() const {
-    return tipo;
+    return tipo; // Devolver el tipo del guerrero
 }
 
 const vector<unique_ptr<InterfazArma>>& Guerrero::getArmas() const {
-    return armas;
+    return armas; // Devolver las armas del guerrero
 }
 
 int Guerrero::calcularDanio() const {

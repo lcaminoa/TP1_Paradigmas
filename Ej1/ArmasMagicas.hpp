@@ -303,7 +303,7 @@ public:
  */
 class Amuleto : public ArmaMagica {
 private:
-    string efectoEspecial; // Efecto especial del amuleto (ej. "Aumenta la defensa", "Regenera energía").
+    string efectoEspecial; // Efecto especial del amuleto.
     bool estaActivado; // Indica si el amuleto está activado.
     bool esCrucifijo; // Indica si el amuleto es un crucifijo.
 

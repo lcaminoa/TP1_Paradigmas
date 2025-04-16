@@ -11,7 +11,7 @@ class Guerrero : public InterfazPersonaje {
 protected:
     int salud;
     int fuerza;
-    int experiencia; // De 0 a 100
+    int experiencia;
     string nombre;
     string tipo;
     vector<unique_ptr<InterfazArma>> armas;
@@ -297,7 +297,7 @@ public:
 
 class Gladiador : public Guerrero {
 private:
-    int gloria; // Nivel de gloria del gladiador (afecta su moral y desempeño)
+    int gloria; // Nivel de gloria del gladiador
     int resistencia; // Nivel de resistencia física del gladiador
 
 public:

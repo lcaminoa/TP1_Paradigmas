@@ -35,10 +35,10 @@ int calcularDanio(Ataque ataque1, Ataque ataque2) {
     if (ataque1 == GOLPE_FUERTE && ataque2 == GOLPE_RAPIDO) return 2; // Jugador 2 recibe daño
     if (ataque1 == GOLPE_RAPIDO && ataque2 == DEFENSA_Y_GOLPE) return 2; // Jugador 2 recibe daño
     if (ataque1 == DEFENSA_Y_GOLPE && ataque2 == GOLPE_FUERTE) return 2; // Jugador 2 recibe daño
-    if (ataque2 == GOLPE_FUERTE && ataque1 == GOLPE_RAPIDO) return 1; // Jugador 1 recibe daño
-    if (ataque2 == GOLPE_RAPIDO && ataque1 == DEFENSA_Y_GOLPE) return 1; // Jugador 1 recibe daño
-    if (ataque2 == DEFENSA_Y_GOLPE && ataque1 == GOLPE_FUERTE) return 1; // Jugador 1 recibe daño
-    return 0; // Empate, nadie recibe daño
+    if (ataque1 == ataque2) {
+        return 0; // Empate, nadie recibe daño
+    }
+    return 1; // Daña al Jugador 1
 }
 
 void ejecutarBatalla() {
